@@ -1,2 +1,2 @@
 # javascript-algorithms
-My code written for FreeCodeCamp's Javascript Algorithms and Data Structures certification
+Project code written while preparing for FreeCodeCamp's Legacy Javascript Algorithms and Data Structures certification
