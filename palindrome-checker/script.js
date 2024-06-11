@@ -1,30 +1,39 @@
 // convert all alphanumeric chars to lowercase
 const checkButton = document.getElementById("check-btn");
-const textInput = document.getElementById("text-input");
 const result = document.getElementById("result");
 const form = document.getElementById("palindrome-form");
 
-form.addEventListener("submit", handleSubmit);
+const removeNonAlphanumerics = (str) => str.toLowerCase().replace(/[^A-Za-z0-9]/g, '');
 
-function handleSubmit(e) {
+const reverseString = (str) => [...str].reverse().join("");
+
+const isPalindrome = (str) => removeNonAlphanumerics(str) === reverseString(removeNonAlphanumerics(str));
+
+const handleSubmit = (e) => {
   e.preventDefault();
+  disableButton();
 
-  if (!textInput.value) {
+  const textInput = document.getElementById("text-input").value;
+
+  if (!textInput) {
     alert("Please input a value");
+    enableButton();
     return;
   }
 
-  result.textContent = isPalindrome(textInput.value) ? `${textInput.value} is a palindrome` : `${textInput.value} is not a palindrome`;
+  const resultText = isPalindrome(textInput) ? "" : "not";
+  result.innerHTML = `<strong>${textInput}</strong> is ${resultText} a palindrome`;
+  enableButton();
 }
 
-function removeNonAlphanumerics(str) {
-  return str.toLowerCase().replace(/[^A-Za-z0-9]/g, '');
+const disableButton = () => {
+  checkButton.style.opacity = ".5";
+  checkButton.setAttribute("disabled", true);
 }
 
-function reverseString(str) {
-  return [...str].reverse().join("");
+const enableButton = () => {
+  checkButton.style.opacity = "1";
+  checkButton.removeAttribute("disabled");
 }
 
-function isPalindrome(str) {
-  return removeNonAlphanumerics(str) === reverseString(removeNonAlphanumerics(str));
-}
+form.addEventListener("submit", handleSubmit);
