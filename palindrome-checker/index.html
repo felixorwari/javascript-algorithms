@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Palindrome Checker</title>
+    <script src="https://cdn.tailwindcss.com/?plugins=forms,typography"></script>
+  </head>
+
+  <body>
+    <div class="max-w-sm mx-auto my-12 prose text-center">
+      <h1>Is it a Palindrome?</h1>
+      <p>Enter in text to check for a palindrome:</p>
+
+      <div class="mb-6">
+        <form
+          id="palindrome-form"
+          class="flex items-stretch justify-center w-full gap-4"
+        >
+          <input
+            type="text"
+            id="text-input"
+            class="w-full border-0 border-b"
+            required
+          />
+
+          <button
+            type="submit"
+            id="check-btn"
+            class="flex items-center px-4 font-medium tracking-wide text-white uppercase rounded shrink-0 bg-fuchsia-600"
+          >
+            Check
+          </button>
+        </form>
+      </div>
+
+      <div id="result"></div>
+
+      <p class="p-4 bg-yellow-200 rounded">
+        A palindrome is a word or sentence that's spelled the same way both
+        forward and backward, ignoring punctuation, case, and spacing.
+      </p>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
