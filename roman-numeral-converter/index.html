@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roman Numeral Converter</title>
+    <script src="https://cdn.tailwindcss.com/?plugins=typography,forms"></script>
+  </head>
+  <body class="bg-gray-800">
+    <div class="max-w-xl px-4 py-20 mx-auto prose">
+      <h1 class="font-serif font-bold text-center uppercase text-gray-50">
+        Roman Numeral Converter
+      </h1>
+
+      <form class="px-6 py-10 bg-gray-100 border rounded-lg" method="post">
+        <label class="block mb-4 text-2xl font-medium font-bold text-center"
+          >Enter a number:</label
+        >
+        <input
+          type="number"
+          id="number"
+          class="w-full mb-6 text-4xl border-gray-300 rounded min-h-20 focus:ring-4 focus:ring-violet-300 focus:ring-offset-4"
+          min="1"
+          required
+        />
+
+        <button
+          type="submit"
+          id="convert-btn"
+          aria-label="Convert"
+          class="w-full p-6 text-xl font-medium tracking-wide text-white uppercase transition-all border-4 rounded hover:shadow-xl hover:tracking-widest hover:from-violet-600 hover:to-violet-700 bg-gradient-to-b from-violet-600 hover:border-violet-700 border-violet-800 to-violet-800 focus:ring-4 focus:ring-violet-300 focus:ring-offset-4"
+        >
+          Convert
+        </button>
+      </form>
+      <div id="output" class="px-6 py-8 mt-8 text-xl"></div>
+    </div>
+
+    <script>
+      const convertBtn = document.getElementById("convert-btn");
+      const outputEl = document.getElementById("output");
+
+      convertBtn.addEventListener("click", () => {
+        if (!number.value) {
+          outputEl.innerHTML = "<p>Please enter a valid number</p>";
+          outputEl.classList.toggle("text-red-900 bg-red-200");
+          return;
+        }
+      });
+    </script>
+  </body>
+</html>
