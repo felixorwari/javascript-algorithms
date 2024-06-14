@@ -6,34 +6,48 @@
     <title>Roman Numeral Converter</title>
     <script src="https://cdn.tailwindcss.com/?plugins=typography,forms"></script>
   </head>
-  <body class="bg-gray-800">
+  <body class="bg-gray-700">
     <div class="max-w-xl px-4 py-20 mx-auto prose">
       <h1 class="font-serif font-bold text-center uppercase text-gray-50">
         Roman Numeral Converter
       </h1>
 
-      <form class="px-6 py-10 bg-gray-100 border rounded-lg" method="post">
-        <label class="block mb-4 text-2xl font-medium font-bold text-center"
+      <form
+        class="px-6 py-10 bg-gray-800 border border-gray-600 rounded-lg"
+        method="post"
+      >
+        <label
+          class="block mb-4 text-2xl font-medium font-bold text-center text-gray-200"
           >Enter a number:</label
         >
         <input
           type="number"
           id="number"
-          class="w-full mb-6 text-4xl border-gray-300 rounded min-h-20 focus:ring-4 focus:ring-violet-300 focus:ring-offset-4"
-          min="1"
-          required
+          aria-describedby="help-text"
+          class="w-full p-6 text-4xl text-gray-200 bg-gray-900 border-gray-600 rounded min-h-20 focus:ring-2 focus:ring-violet-300 focus:ring-offset-2"
         />
+
+        <small id="help-text" class="block px-6 mt-2 mb-6 italic text-gray-400"
+          >A number between 1 - 3999</small
+        >
 
         <button
           type="submit"
           id="convert-btn"
           aria-label="Convert"
-          class="w-full p-6 text-xl font-medium tracking-wide text-white uppercase transition-all border-4 rounded hover:shadow-xl hover:tracking-widest hover:from-violet-600 hover:to-violet-700 bg-gradient-to-b from-violet-600 hover:border-violet-700 border-violet-800 to-violet-800 focus:ring-4 focus:ring-violet-300 focus:ring-offset-4"
+          class="w-full p-6 text-xl font-medium tracking-wide text-white transition-all border-4 rounded hover:shadow-xl hover:tracking-widest hover:from-violet-400 hover:to-violet-700 bg-gradient-to-b from-violet-400 hover:border-violet-700 border-violet-800 to-violet-800 focus:ring-2 focus:ring-violet-300 focus:ring-offset-2"
+          min="0"
+          required
         >
           Convert
         </button>
       </form>
-      <div id="output" class="px-6 py-4 mt-8 text-xl"></div>
+
+      <div id="output" class="px-6 py-4 mt-8 text-xl rounded"></div>
+
+      <div id="info">
+        <span class="px-6 py-2 rounded"></span>
+      </div>
     </div>
     <script src="./script.js"></script>
   </body>
