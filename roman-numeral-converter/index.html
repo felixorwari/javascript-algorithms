@@ -33,20 +33,8 @@
           Convert
         </button>
       </form>
-      <div id="output" class="px-6 py-8 mt-8 text-xl"></div>
+      <div id="output" class="px-6 py-4 mt-8 text-xl"></div>
     </div>
-
-    <script>
-      const convertBtn = document.getElementById("convert-btn");
-      const outputEl = document.getElementById("output");
-
-      convertBtn.addEventListener("click", () => {
-        if (!number.value) {
-          outputEl.innerHTML = "<p>Please enter a valid number</p>";
-          outputEl.classList.toggle("text-red-900 bg-red-200");
-          return;
-        }
-      });
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>
