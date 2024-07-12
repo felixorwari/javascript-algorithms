@@ -2,7 +2,7 @@
 // const areaCodeRegex = /(\(\d{3}\)\s?|\d{3}[-\s]?)/;
 // const phoneNumberRegex = /([\d]{3}[-\s]?\d{4}$)/g;
 
-const testRegex = /^(1\s?)?(\s?\(\d{3}\)\s?|\d{3}[\s-]?)(\d{3}[-\s]?\d{4}$)/g;
+const testRegex = /^(1\s?)?(\s?\(\d{3}\)\s?|\d{3}[\s-]?)(\d{3}[-\s]?\d{4}$)/;
 
 const userInput = document.getElementById('user-input');
 const inputForm = document.getElementById('validator-form');
